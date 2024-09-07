@@ -72,64 +72,64 @@ public class ImmersiveChat extends JavaPlugin implements PluginMessageListener {
 		injector.injectMembers(new UnmuteScheduler());
 
 		try {
-			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Initializing..."));
+			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Initializing..."));
 			if (!getDataFolder().exists()) {
 				getDataFolder().mkdirs();
 			}
 			File file = new File(getDataFolder(), "config.yml");
 			if (!file.exists()) {
-				getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Config not found! Generating file."));
+				getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Config not found! Generating file."));
 				saveDefaultConfig();
 			} else {
-				getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Config found! Loading file."));
+				getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Config found! Loading file."));
 			}
 
 			saveResource("example_config_always_up_to_date!.yml", true);
 		} catch (Exception ex) {
-			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - &cCould not load configuration! Something unexpected went wrong!"));
+			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - &cCould not load configuration! Something unexpected went wrong!"));
 		}
 
-		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Checking for Vault..."));
+		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Checking for Vault..."));
 
 		if (!setupPermissions()) {
-			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - &cCould not find Vault and/or a Vault compatible permissions plugin!"));
+			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - &cCould not find Vault and/or a Vault compatible permissions plugin!"));
 			getServer().getPluginManager().disablePlugin(this);
 			return;
 		}
 
 		Localization.initialize(this);
 
-		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Loading player data"));
+		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Loading player data"));
 		spigotFlatFileService.loadLegacyPlayerData();
 		spigotFlatFileService.loadPlayerData();
 
 		registerListeners();
-		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Registering Listeners"));
+		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Registering Listeners"));
 
-		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Registering BungeeCord channels"));
+		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Registering BungeeCord channels"));
 		getServer().getMessenger().registerOutgoingPluginChannel(this, PluginMessageController.PLUGIN_MESSAGING_CHANNEL);
 		getServer().getMessenger().registerIncomingPluginChannel(this, PluginMessageController.PLUGIN_MESSAGING_CHANNEL, this);
 
 		PluginManager pluginManager = getServer().getPluginManager();
 		if (pluginManager.isPluginEnabled("Towny")) {
-			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Enabling Towny Formatting"));
+			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Enabling Towny Formatting"));
 		}
 		if (pluginManager.isPluginEnabled("Jobs")) {
-			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Enabling Jobs Formatting"));
+			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Enabling Jobs Formatting"));
 		}
 		if (pluginManager.isPluginEnabled("Factions")) {
 			final String version = pluginManager.getPlugin("Factions").getDescription().getVersion();
-			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Enabling Factions Formatting version " + version));
+			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Enabling Factions Formatting version " + version));
 		}
 		if (pluginManager.isPluginEnabled("PlaceholderAPI")) {
-			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Enabling PlaceholderAPI Hook"));
+			getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Enabling PlaceholderAPI Hook"));
 		}
 
 		ventureChatPlaceholders.register();
 
 		startRepeatingTasks();
 
-		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Enabled Successfully"));
+		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Enabled Successfully"));
 	}
 
 	@Override
@@ -138,8 +138,8 @@ public class ImmersiveChat extends JavaPlugin implements PluginMessageListener {
 		playerApiService.clearMineverseChatPlayerMap();
 		playerApiService.clearNameMap();
 		playerApiService.clearOnlineMineverseChatPlayerMap();
-		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Disabling..."));
-		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Disabled Successfully"));
+		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Disabling..."));
+		getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Disabled Successfully"));
 	}
 
 	private void startRepeatingTasks() {
@@ -149,7 +149,7 @@ public class ImmersiveChat extends JavaPlugin implements PluginMessageListener {
 			public void run() {
 				spigotFlatFileService.savePlayerData();
 				if (getConfig().getString("loglevel", "info").equals("debug")) {
-					getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&8[&eVentureChat&8]&e - Saving Player Data"));
+					getServer().getConsoleSender().sendMessage(FormatUtils.FormatStringAll("&9[ImmersiveChat] - Saving Player Data"));
 				}
 			}
 		}, 0L, getConfig().getInt("saveinterval") * 1200); // one minute * save interval
