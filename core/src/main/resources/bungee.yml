@@ -1,0 +1,4 @@
+name: ImmersiveChat
+main: me.slide.immersivechat.initiators.application.ImmersiveChatChatBungee
+version: ${version}
+author: Slide_AM

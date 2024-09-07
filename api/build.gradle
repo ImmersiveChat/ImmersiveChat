@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'venture.Aust1n46.chat.api'
+version = '4.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compileOnly("org.projectlombok:lombok:1.18.22")
+    annotationProcessor("org.projectlombok:lombok:1.18.22")
+    compileOnly("org.spigotmc:spigot-api:1.21.1-R0.1-SNAPSHOT")
+    testImplementation platform('org.junit:junit-bom:5.10.0')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+    compileOnly 'com.comphenix.protocol:ProtocolLib:5.1.0'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jar {
+    archiveAppendix = 'API'
+}

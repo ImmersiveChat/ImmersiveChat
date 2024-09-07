@@ -1,0 +1,1 @@
+{"id":"immersivechat","name":"ImmersiveChat","version":"${version}","description":"#1 Channels Chat plugin! Spigot + Bungee. Supports PlaceholderAPI + JSON formatting. Moderation GUI!","authors":["Aust1n46"],"dependencies":[],"main":"me.slide.immersivechat.initiators.application.ImmersiveChatVelocity"}

@@ -1,0 +1,4 @@
+rootProject.name = 'ImmersiveChat'
+include 'api'
+include 'core'
+
