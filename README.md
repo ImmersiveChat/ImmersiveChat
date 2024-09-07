@@ -1,35 +1,36 @@
-# README #
+# ImmersiveChat #
 
-Read before making any changes or pull requests!
+ImmersiveChat is a fork of [VentureChat](https://github.com/Aust1n46/VentureChat) that aims to improve some of its aspects.
 
-### What is this repository for?
+### What has already been implemented?
+* API (Events)
+* Changed build system from Maven to Gradle
+* Dependency inversion principle
+### What is planned
+* Add toggle for moderation gui
+* MiniMessage color pattern support
+* Add GUI for /channel to join channels
+* and more...
 
-VentureChat Spigot plugin Repo
+### How to setup the plugin?
 
-### How do I get set up?
+| Dependency      |                             Download                              |                           Source                           |
+|-----------------|:-----------------------------------------------------------------:|:----------------------------------------------------------:|
+| ProtocolLib     |  [Spigot](https://www.spigotmc.org/resources/protocollib.1997/)   |     [Github](https://github.com/dmulloy2/ProtocolLib/)     |
+| PlaceholdersAPI | [Spigot](https://www.spigotmc.org/resources/placeholderapi.6245/) | [Github](https://github.com/PlaceholderAPI/PlaceholderAPI) |
+| Vault           |          [Bukkit](https://dev.bukkit.org/projects/vault)          |        [Github](https://github.com/milkbowl/Vault)         |
 
-Full setup and dependency guide is available here on SpigotMC: https://www.spigotmc.org/resources/venturechat.771/
+### How to migrate from VentureChat?
+1. Replace the VentureChat jar file in the plugins folder with ImmersiveChat
+2. Rename the VentureChat folder in the config folder to ImmersiveChat.
+3. Done!
 
-In short, Install `Vault` (and a compatable permission system), `ProtocolLib`, and `PlaceholderAPI` (`Player` and `Vault` extensions optional).
-
-To build, simply run `mvn`.
-
-Requires Java 8.
-
-### Contribution guidelines
-
-* Follow the existing style conventions. I used the default Eclipse formatting styleset for the majority of the project.
-* Follow general Java best practices and object oriented principles. There are examples of poor practices in this existing legacy codebase, but that doesn't mean new contributions should stoop to that level.
-* Include JavaDoc for your contribution. Same as stated above, most of this legacy codebase isn't documented, but that doesn't mean new contributions should also be undocumented. Especially important when multiple people are working on a project.
-* Include unit tests for stand alone methods. I'm not expecting full coverage for complex Spigot events, etc, but for formatting or other non Spigot related code, tests would be much appreciated.
-
-### Who do I talk to?
-
-* I'd recommend discussing any change before making it to avoid wasting your time and my time. Especially for a major change or if it's your first time contributing. I am extremely responsive on my Spigot discussion board (above link).
-
+### What about [Folia](https://papermc.io/software/folia) support?
+* ImmersiveChat is able to support Folia, but one of its dependencies, namely PlaceholdersAPI, does not support it. You can try to download a fork of it that supports Folia (for example [this](https://github.com/Anon8281/PlaceholderAPIt)) to make ImmersiveChat work, but we do not guarantee stability and reliability in this case.
+* * *
 License:
 
-Copyright (C) {2020}  {Austin Brolly}
+Copyright (C) {2024}  {Adam Mekush}
 
 ```
     This program is free software: you can redistribute it and/or modify
