@@ -6,7 +6,7 @@ ImmersiveChat is a fork of [VentureChat](https://github.com/Aust1n46/VentureChat
 * API (Events)
 * Changed build system from Maven to Gradle
 * Dependency inversion principle
-### What is planned
+### What is planned?
 * Add toggle for moderation gui
 * MiniMessage color pattern support
 * Add GUI for /channel to join channels
@@ -14,19 +14,34 @@ ImmersiveChat is a fork of [VentureChat](https://github.com/Aust1n46/VentureChat
 
 ### How to setup the plugin?
 
+
+| Core                                                               | Supported? |    Note    |
+|--------------------------------------------------------------------|:----------:|:----------:|
+| [Spigot](https://www.spigotmc.org/resources/protocollib.1997/)     |    Yes     |     -      |
+| [PaperMC](https://www.spigotmc.org/resources/placeholderapi.6245/) |    Yes     |     -      |
+| [Purpur](https://purpurmc.org)                                     |    Yes     |     -      |
+| [Pufferfish](https://pufferfish.host/downloads)                    |    Yes     |     -      |
+| Folia                                                              |     No     | read below |
+
 | Dependency      |                             Download                              |                           Source                           |
 |-----------------|:-----------------------------------------------------------------:|:----------------------------------------------------------:|
 | ProtocolLib     |  [Spigot](https://www.spigotmc.org/resources/protocollib.1997/)   |     [Github](https://github.com/dmulloy2/ProtocolLib/)     |
 | PlaceholdersAPI | [Spigot](https://www.spigotmc.org/resources/placeholderapi.6245/) | [Github](https://github.com/PlaceholderAPI/PlaceholderAPI) |
 | Vault           |          [Bukkit](https://dev.bukkit.org/projects/vault)          |        [Github](https://github.com/milkbowl/Vault)         |
 
+### What about [Folia](https://papermc.io/software/folia) support?
+* ImmersiveChat is able to support Folia, but one of its dependencies, namely PlaceholdersAPI, does not support it. You can try to download a fork of it that supports Folia (for example [this](https://github.com/Anon8281/PlaceholderAPIt)) to make ImmersiveChat work, but we do not guarantee stability and reliability in this case.
+
 ### How to migrate from VentureChat?
 1. Replace the VentureChat jar file in the plugins folder with ImmersiveChat
 2. Rename the VentureChat folder in the config folder to ImmersiveChat.
 3. Done!
 
-### What about [Folia](https://papermc.io/software/folia) support?
-* ImmersiveChat is able to support Folia, but one of its dependencies, namely PlaceholdersAPI, does not support it. You can try to download a fork of it that supports Folia (for example [this](https://github.com/Anon8281/PlaceholderAPIt)) to make ImmersiveChat work, but we do not guarantee stability and reliability in this case.
+### Where I can find commands and permissions?
+Since commands and permissions are not yet different, you can use the same ones as in VentureChat. You can find information about them [here](https://github.com/Tapiture/venturechat/wiki/Commands-and-Permissions).
+
+
+
 * * *
 License:
 
